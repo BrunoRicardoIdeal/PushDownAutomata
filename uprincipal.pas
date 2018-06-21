@@ -10,20 +10,25 @@ uses
 
 type
 
-  { TForm1 }
+  { TfrmPrincipal }
 
-  TForm1 = class(TForm)
+  TfrmPrincipal = class(TForm)
      btnIniciar: TButton;
      btnSelecionaArquivo: TButton;
      edtCaminhoArquivo: TEdit;
      Label1: TLabel;
+     memoArquivo: TMemo;
+     memoLog: TMemo;
      openDlg: TOpenDialog;
      procedure btnIniciarClick(Sender: TObject);
      procedure btnSelecionaArquivoClick(Sender: TObject);
+     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
      procedure FormCreate(Sender: TObject);
   private
      const
         DESC_EDT_ARQ = 'Selecione o arquivo com as cadeias a serem testadas';
+     var
+        FArquivo: TStringList;
      procedure ValidaArquivo;
      procedure Iniciar;
   public
@@ -31,20 +36,20 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmPrincipal: TfrmPrincipal;
 
 implementation
 
 {$R *.lfm}
 
-{ TForm1 }
+{ TfrmPrincipal }
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
 
 end;
 
-procedure TForm1.ValidaArquivo;
+procedure TfrmPrincipal.ValidaArquivo;
 begin
    if not FileExists(edtCaminhoArquivo.Text) then
    begin
@@ -59,26 +64,41 @@ begin
    end;
 end;
 
-procedure TForm1.Iniciar;
+procedure TfrmPrincipal.Iniciar;
 var
    lAutomato: TAutomato;
-   lEstadosP: TVetorEstados;
+   lLinha: String;
 begin
-   SetLength(lEstadosP, 4);
+   memoLog.Clear;
+   lAutomato := TAutomato.Create;
+   try
+      if Assigned(FArquivo) then
+      begin
+        FArquivo.Clear;
+      end
+      else
+      begin
+        FArquivo := TStringList.Create;
+      end;
 
-   lEstadosP[0].EstadoFinal:= True;
-   lEstadosP[0].Id := 'q0';
+      FArquivo.LoadFromFile(edtCaminhoArquivo.Text);
+      for lLinha in FArquivo do
+      begin
+         memoLog.Lines.Add(lAutomato.Execute(lLinha));
+      end;
 
-   lAutomato := TAutomato.Create(lEstadosP);
-   lAutomato.;
+   finally
+     lAutomato.Free;;
+   end;
 end;
 
-procedure TForm1.btnSelecionaArquivoClick(Sender: TObject);
+procedure TfrmPrincipal.btnSelecionaArquivoClick(Sender: TObject);
 begin
    if openDlg.Execute then
    begin
       edtCaminhoArquivo.Text := openDlg.FileName;
       ValidaArquivo;
+      memoArquivo.Lines.LoadFromFile(edtCaminhoArquivo.Text);
    end
    else
    begin
@@ -89,11 +109,17 @@ begin
    end;
 end;
 
-procedure TForm1.btnIniciarClick(Sender: TObject);
-
+procedure TfrmPrincipal.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-   ValidaArquivo;
+    if Assigned(FArquivo) then
+    begin
+       FArquivo.Destroy;
+    end;
+end;
 
+procedure TfrmPrincipal.btnIniciarClick(Sender: TObject);
+begin
+   Iniciar;
 end;
 
 end.

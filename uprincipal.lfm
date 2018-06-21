@@ -1,19 +1,21 @@
-object Form1: TForm1
-  Left = 679
-  Height = 300
-  Top = 236
-  Width = 800
-  Caption = 'Form1'
-  ClientHeight = 300
-  ClientWidth = 800
+object frmPrincipal: TfrmPrincipal
+  Left = 744
+  Height = 530
+  Top = 221
+  Width = 1050
+  BorderStyle = bsDialog
+  Caption = 'Autômato de pilha'
+  ClientHeight = 530
+  ClientWidth = 1050
   DesignTimePPI = 120
+  OnClose = FormClose
   OnCreate = FormCreate
   LCLVersion = '1.8.4.0'
   object btnIniciar: TButton
-    Left = 56
-    Height = 31
-    Top = 216
-    Width = 94
+    Left = 16
+    Height = 56
+    Top = 80
+    Width = 432
     Caption = 'Iniciar'
     OnClick = btnIniciarClick
     TabOrder = 0
@@ -44,9 +46,28 @@ object Form1: TForm1
     Caption = 'Arquivo de teste'
     ParentColor = False
   end
+  object memoLog: TMemo
+    Left = 16
+    Height = 364
+    Top = 144
+    Width = 432
+    Lines.Strings = (
+      ''
+    )
+    ReadOnly = True
+    TabOrder = 3
+  end
+  object memoArquivo: TMemo
+    Left = 544
+    Height = 480
+    Top = 32
+    Width = 477
+    ReadOnly = True
+    TabOrder = 4
+  end
   object openDlg: TOpenDialog
     Filter = '*.txt'
-    left = 200
-    top = 104
+    left = 488
+    top = 80
   end
 end

@@ -5,18 +5,10 @@ unit uTipos;
 interface
 
 uses
-   Classes, SysUtils, gstack;
+   Classes, SysUtils, contnrs, uEstado;
 
 type
-
-  TEstado = record
-    Id: string;
-    EstadoFinal: Boolean;
-  end;
-
-  TVetorEstados = array of TEstado;
-
-  TPilhaString = specialize TStack<string>;
+  //TPilhaString = specialize TStack<String>;
 
   TResultadoTransicao = record
     NovoEstado: TEstado;

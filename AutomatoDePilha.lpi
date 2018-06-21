@@ -27,7 +27,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="9">
       <Unit0>
         <Filename Value="AutomatoDePilha.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -35,7 +35,7 @@
       <Unit1>
         <Filename Value="uprincipal.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="frmPrincipal"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uPrincipal"/>
@@ -65,6 +65,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uConstantes"/>
       </Unit6>
+      <Unit7>
+        <Filename Value="uestado.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uEstado"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="uparamtransicao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uParamTransicao"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

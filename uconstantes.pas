@@ -8,8 +8,9 @@ uses
    Classes, SysUtils, uTipos;
 
 const
-   IMPUT_ALPHABET = ['a', 'b'];
+   INPUT_ALPHABET: array[1..2] of unicodeString = ('0', '1');
    STACK_ALPHABET = ['F','Z','X'];
+   STACK_GROUND = 'Z';
 implementation
 
 end.
