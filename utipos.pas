@@ -5,7 +5,7 @@ unit uTipos;
 interface
 
 uses
-   Classes, SysUtils, contnrs, uEstado;
+   Classes, SysUtils, uEstado;
 
 type
   //TPilhaString = specialize TStack<String>;

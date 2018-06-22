@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  uAutomato, uTipos, uConstantes;
+  ExtCtrls, uAutomato, uConstantes;
 
 type
 
@@ -19,7 +19,9 @@ type
      Label1: TLabel;
      memoArquivo: TMemo;
      memoLog: TMemo;
+     memoPilha: TMemo;
      openDlg: TOpenDialog;
+     pnlFundo: TPanel;
      procedure btnIniciarClick(Sender: TObject);
      procedure btnSelecionaArquivoClick(Sender: TObject);
      procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -71,6 +73,7 @@ var
 begin
    memoLog.Clear;
    lAutomato := TAutomato.Create;
+   lAutomato.MemoLogPilha := memoPilha;
    try
       if Assigned(FArquivo) then
       begin
@@ -115,6 +118,7 @@ begin
     begin
        FArquivo.Destroy;
     end;
+    CloseAction := caFree;
 end;
 
 procedure TfrmPrincipal.btnIniciarClick(Sender: TObject);

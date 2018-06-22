@@ -1,73 +1,97 @@
 object frmPrincipal: TfrmPrincipal
-  Left = 744
-  Height = 530
-  Top = 221
-  Width = 1050
+  Left = 411
+  Height = 523
+  Top = 150
+  Width = 1023
   BorderStyle = bsDialog
   Caption = 'Autômato de pilha'
-  ClientHeight = 530
-  ClientWidth = 1050
+  ClientHeight = 523
+  ClientWidth = 1023
   DesignTimePPI = 120
   OnClose = FormClose
   OnCreate = FormCreate
   LCLVersion = '1.8.4.0'
-  object btnIniciar: TButton
-    Left = 16
-    Height = 56
-    Top = 80
-    Width = 432
-    Caption = 'Iniciar'
-    OnClick = btnIniciarClick
-    TabOrder = 0
-  end
-  object edtCaminhoArquivo: TEdit
-    Left = 16
-    Height = 28
-    Top = 37
-    Width = 432
-    ReadOnly = True
-    TabOrder = 1
-    Text = 'Selecione o arquivo com as cadeias a serem testadas'
-  end
-  object btnSelecionaArquivo: TButton
-    Left = 456
-    Height = 31
-    Top = 36
-    Width = 72
-    Caption = '. . .'
-    OnClick = btnSelecionaArquivoClick
-    TabOrder = 2
-  end
-  object Label1: TLabel
-    Left = 16
-    Height = 20
-    Top = 13
-    Width = 109
-    Caption = 'Arquivo de teste'
+  object pnlFundo: TPanel
+    Left = 0
+    Height = 523
+    Top = 0
+    Width = 1023
+    Align = alClient
+    ClientHeight = 523
+    ClientWidth = 1023
+    Color = clBlack
     ParentColor = False
-  end
-  object memoLog: TMemo
-    Left = 16
-    Height = 364
-    Top = 144
-    Width = 432
-    Lines.Strings = (
-      ''
-    )
-    ReadOnly = True
-    TabOrder = 3
-  end
-  object memoArquivo: TMemo
-    Left = 544
-    Height = 480
-    Top = 32
-    Width = 477
-    ReadOnly = True
-    TabOrder = 4
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 16
+      Height = 20
+      Top = 13
+      Width = 109
+      Caption = 'Arquivo de teste'
+      Font.Color = clWhite
+      ParentColor = False
+      ParentFont = False
+    end
+    object memoLog: TMemo
+      Left = 560
+      Height = 388
+      Top = 96
+      Width = 432
+      Lines.Strings = (
+        ''
+      )
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 0
+    end
+    object edtCaminhoArquivo: TEdit
+      Left = 16
+      Height = 28
+      Top = 37
+      Width = 432
+      ReadOnly = True
+      TabOrder = 1
+      Text = 'Selecione o arquivo com as cadeias a serem testadas'
+    end
+    object memoArquivo: TMemo
+      Left = 19
+      Height = 296
+      Top = 72
+      Width = 509
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 2
+    end
+    object btnSelecionaArquivo: TButton
+      Left = 456
+      Height = 31
+      Top = 36
+      Width = 72
+      Caption = '. . .'
+      OnClick = btnSelecionaArquivoClick
+      TabOrder = 3
+    end
+    object memoPilha: TMemo
+      Left = 16
+      Height = 113
+      Top = 376
+      Width = 508
+      ReadOnly = True
+      TabOrder = 4
+    end
+    object btnIniciar: TButton
+      Left = 560
+      Height = 56
+      Top = 37
+      Width = 432
+      Caption = 'Iniciar'
+      OnClick = btnIniciarClick
+      TabOrder = 5
+    end
   end
   object openDlg: TOpenDialog
     Filter = '*.txt'
-    left = 488
-    top = 80
+    left = 522
+    top = 114
   end
 end

@@ -4,13 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="12">
+    <Units Count="13">
       <Unit0>
         <Filename Value="AutomatoDePilha.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
-        <CursorPos X="34" Y="19"/>
-        <UsageCount Value="33"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="40" Y="14"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -20,9 +20,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uPrincipal"/>
-        <TopLine Value="69"/>
-        <CursorPos X="42" Y="87"/>
-        <UsageCount Value="33"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="98"/>
+        <CursorPos X="31" Y="61"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -33,19 +34,19 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="17" Y="23"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="42"/>
       </Unit2>
       <Unit3>
         <Filename Value="uautomato.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uAutomato"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="191"/>
-        <CursorPos Y="212"/>
-        <UsageCount Value="33"/>
-        <Bookmarks Count="1">
-          <Item0 X="4" Y="160" ID="1"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="244"/>
+        <CursorPos X="49" Y="257"/>
+        <UsageCount Value="42"/>
+        <Bookmarks Count="2">
+          <Item0 X="8" Y="156" ID="2"/>
+          <Item1 X="4" Y="125" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
       </Unit3>
@@ -53,9 +54,9 @@
         <Filename Value="utipos.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uTipos"/>
-        <EditorIndex Value="4"/>
-        <CursorPos X="44" Y="11"/>
-        <UsageCount Value="33"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="21" Y="8"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -64,35 +65,34 @@
         <UnitName Value="uPilhaAutomato"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="36" Y="4"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="42"/>
       </Unit5>
       <Unit6>
         <Filename Value="uconstantes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uConstantes"/>
-        <EditorIndex Value="8"/>
-        <CursorPos X="16" Y="13"/>
-        <UsageCount Value="30"/>
+        <EditorIndex Value="9"/>
+        <CursorPos X="48" Y="11"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="uestado.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uEstado"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="38"/>
-        <CursorPos Y="67"/>
-        <UsageCount Value="27"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="8" Y="23"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="uparamtransicao.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uParamTransicao"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="9"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="42"/>
         <CursorPos X="42" Y="25"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -100,183 +100,164 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos X="53" Y="13"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit9>
       <Unit10>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\packages\fcl-base\src\contnrs.pp"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="135"/>
         <CursorPos X="3" Y="151"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="17"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\inc\objpash.inc"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="173"/>
         <CursorPos X="8" Y="189"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit11>
+      <Unit12>
+        <Filename Value="C:\lazarus\lcl\stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="14" Y="18"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit12>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="185" TopLine="170"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="47" Column="4" TopLine="45"/>
       </Position1>
       <Position2>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="170" TopLine="154"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="48" Column="4" TopLine="46"/>
       </Position2>
       <Position3>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="159" TopLine="153"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="49" Column="4" TopLine="47"/>
       </Position3>
       <Position4>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="161" TopLine="153"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="50" Column="4" TopLine="48"/>
       </Position4>
       <Position5>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="169" TopLine="153"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="51" Column="4" TopLine="49"/>
       </Position5>
       <Position6>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="170" TopLine="153"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="50" Column="4" TopLine="48"/>
       </Position6>
       <Position7>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="171" TopLine="153"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="49" Column="4" TopLine="47"/>
       </Position7>
       <Position8>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="179" TopLine="153"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="48" Column="4" TopLine="46"/>
       </Position8>
       <Position9>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="180" TopLine="154"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="47" Column="4" TopLine="45"/>
       </Position9>
       <Position10>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="185" TopLine="159"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="46" Column="4" TopLine="44"/>
       </Position10>
       <Position11>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="187" TopLine="161"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="45" Column="4" TopLine="43"/>
       </Position11>
       <Position12>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="188" TopLine="162"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="44" Column="4" TopLine="42"/>
       </Position12>
       <Position13>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="189" TopLine="163"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="43" Column="4" TopLine="41"/>
       </Position13>
       <Position14>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="185" TopLine="163"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="42" Column="4" TopLine="40"/>
       </Position14>
       <Position15>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="170" TopLine="163"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="43" Column="4" TopLine="41"/>
       </Position15>
       <Position16>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="159" TopLine="142"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="44" Column="4" TopLine="42"/>
       </Position16>
       <Position17>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="161" TopLine="142"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="45" Column="4" TopLine="43"/>
       </Position17>
       <Position18>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="169" TopLine="142"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="46" Column="4" TopLine="44"/>
       </Position18>
       <Position19>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="170" TopLine="143"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="47" Column="4" TopLine="45"/>
       </Position19>
       <Position20>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="171" TopLine="144"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="48" Column="4" TopLine="46"/>
       </Position20>
       <Position21>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="179" TopLine="164"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="50" Column="4" TopLine="48"/>
       </Position21>
       <Position22>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="180" TopLine="164"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="51" Column="4" TopLine="49"/>
       </Position22>
       <Position23>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="185" TopLine="164"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="50" Column="4" TopLine="48"/>
       </Position23>
       <Position24>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="187" TopLine="164"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="49" Column="4" TopLine="47"/>
       </Position24>
       <Position25>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="188" TopLine="164"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="48" Column="4" TopLine="46"/>
       </Position25>
       <Position26>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="189" TopLine="164"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="47" Column="4" TopLine="45"/>
       </Position26>
       <Position27>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="185" TopLine="164"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="46" Column="4" TopLine="44"/>
       </Position27>
       <Position28>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="170" TopLine="164"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="45" Column="4" TopLine="43"/>
       </Position28>
       <Position29>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="159" TopLine="142"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="44" Column="4" TopLine="42"/>
       </Position29>
       <Position30>
-        <Filename Value="uautomato.pas"/>
-        <Caret Line="206" TopLine="191"/>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="51" Column="4" TopLine="49"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
-    <BreakPoints Count="1">
+    <Watches Count="2">
       <Item1>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="uautomato.pas"/>
-        <Line Value="156"/>
-      </Item1>
-    </BreakPoints>
-    <Watches Count="8">
-      <Item1>
-        <Expression Value="pCadeia"/>
+        <Expression Value="result"/>
       </Item1>
       <Item2>
-        <Expression Value="FEstadoAtual"/>
+        <Expression Value="FVetStackShow"/>
       </Item2>
-      <Item3>
-        <Expression Value="lCharCadeia"/>
-      </Item3>
-      <Item4>
-        <Expression Value="lTransicoes"/>
-      </Item4>
-      <Item5>
-        <Expression Value="ltop"/>
-      </Item5>
-      <Item6>
-        <Expression Value="FPilha"/>
-      </Item6>
-      <Item7>
-        <Expression Value="lTrans.SimboloPilhaInsere"/>
-      </Item7>
-      <Item8>
-        <Expression Value="lTrans.SimboloPilhaCompara"/>
-      </Item8>
     </Watches>
   </Debugging>
 </CONFIG>

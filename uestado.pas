@@ -20,8 +20,6 @@ type
        constructor Create(const pId: string; const pFinal: boolean);
        destructor Destroy;override;
 
-       function GetProximoEstado(const pInput: string): TEstado;
-
        property Id:string read FId;
        property Final: Boolean read FFinal default False;
        property ListaParamTransicoes: TListaParamTransicao read FListaParamTransicoes write FListaParamTransicoes;
@@ -80,19 +78,6 @@ destructor TEstado.Destroy;
 begin
    FListaParamTransicoes.Destroy;
    inherited Destroy;
-end;
-
-function TEstado.GetProximoEstado(const pInput: string): TEstado;
-var
-   lIndex: integer;
-   lParam: TParamTransicao;
-begin
-   //for lIndex:= 0 to Pred(Self.FListaParamTransicoes.count) then
-   begin
-      lParam := self.FListaParamTransicoes.Items[lIndex];
-
-   end;
-
 end;
 
 end.

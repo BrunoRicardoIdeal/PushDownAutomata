@@ -5,22 +5,32 @@ unit uAutomato;
 interface
 
 uses
-   Classes, SysUtils, uTipos, uEStado, uParamTransicao, strutils, uConstantes, contnrs;
+   Classes, SysUtils, uEStado, uParamTransicao, strutils, uConstantes, contnrs,
+   StdCtrls;
 type
 
 { TAutomato }
 
 TAutomato = class(TObject)
    private
-     FPilha: TStack;
-     FEstadosPossiveis: TListaEstado;
-     FEstadoAtual: TEstado;
+      var
+        FPilha: TStack;
+        FEstadosPossiveis: TListaEstado;
+        FEstadoAtual: TEstado;
+        FMemoLogPilha: TMemo;
+        FCharInsere: Char;
+        FStrRev: string;
+        FTopStr: string;
+        FvetIns: array of string;
+        FVetStackShow: array of string;
      procedure ConfigurarEstados;
      procedure ConfigurarListaTransicoes(var pEstado: TEstado);
+     procedure Push(const pTrans: TParamTransicao);
+     procedure ProcessaTransicao(const pTransicoes: TListaParamTransicao);
+     function Pop: string;
+     function Peek: string;
+     function EscrevePilha: string;
      function GetTransicaoInput(const pInput: string; const pEstado: TEstado): TListaParamTransicao;
-
-     function Transitar(pEstado: TEstado; pInput: string; pSimboloPilha: string): TSetResultadoTransicao;
-
    public
      constructor Create;
      destructor Destroy;override;
@@ -28,6 +38,7 @@ TAutomato = class(TObject)
      procedure IniciarPilha;
      property Pilha: TStack read FPilha write FPilha;
      property EstadosPossiveis: TListaEstado read FEstadosPossiveis;
+     property MemoLogPilha: TMemo read FMemoLogPilha write FMemoLogPilha;
 end;
 implementation
 
@@ -40,7 +51,7 @@ var
 begin
    FEstadosPossiveis.Clear;
 
-   lEstado := TEstado.Create('qi', False);
+   lEstado := TEstado.Create('qe', False);
    FEstadosPossiveis.Add(lEstado);
 
    //Estado q0
@@ -107,6 +118,82 @@ begin
    end;
 end;
 
+procedure TAutomato.Push(const pTrans: TParamTransicao);
+var
+   lIndex: integer;
+begin
+   if pTrans.SimboloPilhaInsere <> '' then
+   begin
+     FStrRev := ReverseString(pTrans.SimboloPilhaInsere);
+     for FCharInsere in FStrRev do
+     begin
+       lIndex := Length(FvetIns);
+       SetLength(FvetIns, lIndex + 1);
+       FvetIns[lIndex] := FCharInsere;
+       FPilha.Push(PChar(FvetIns[lIndex]));
+     end;
+   end;
+end;
+
+procedure TAutomato.ProcessaTransicao(const pTransicoes: TListaParamTransicao);
+var
+   lIndexTran: integer;
+   lTrans: TParamTransicao;
+begin
+   for lIndexTran:= 0 to pred (pTransicoes.Count) do
+   begin
+      FTopStr := Self.Peek;
+      lTrans  := pTransicoes.Items[lIndexTran];
+
+      if (UpperCase(lTrans.SimboloPilhaCompara) = UpperCase(FTopStr)) or
+         (lTrans.SimboloPilhaCompara = '') then
+      begin
+         Self.Pop;
+         Self.Push(lTrans);
+         FEstadoAtual := TEstado(lTrans.Destino);
+         Exit;
+      end;
+   end;
+end;
+
+function TAutomato.Pop: string;
+begin
+   Result := PChar(FPilha.Pop)^;
+   if FPilha.Count = 0 then
+   begin
+     FPilha.Push(PChar(STACK_GROUND));
+   end;
+end;
+
+function TAutomato.Peek: string;
+begin
+   Result := PChar(FPilha.Peek)^;
+end;
+
+function TAutomato.EscrevePilha: string;
+var
+   lIndice: integer;
+begin
+   Result := '';
+   if FPilha.Count > 0 then
+   begin
+      SetLength(FVetStackShow, 0);
+
+      while FPilha.Count > 0 do
+      begin
+        lIndice := Length(FVetStackShow);
+        SetLength(FVetStackShow, lIndice + 1);
+        FVetStackShow[lIndice] := PChar(FPilha.Pop)^;
+      end;
+
+      for lIndice := Pred(Length(FVetStackShow)) downto 0 do
+      begin
+         FPilha.Push(PChar(FVetStackShow[lIndice]));
+         Result := Result + FVetStackShow[lIndice];
+      end;
+   end;
+end;
+
 function TAutomato.GetTransicaoInput(const pInput: string; const pEstado: TEstado): TListaParamTransicao;
 var
    lParam: TParamTransicao;
@@ -124,18 +211,14 @@ begin
    end;
 end;
 
-function TAutomato.Transitar(pEstado: TEstado; pInput: string;
-   pSimboloPilha: string): TSetResultadoTransicao;
-begin
-
-end;
-
 constructor TAutomato.Create;
 begin
    inherited Create;
    FEstadosPossiveis := TListaEstado.Create;
    ConfigurarEstados;
    IniciarPilha;
+   SetLength(FvetIns, 0);
+   SetLength(FVetStackShow, 0);
 end;
 
 destructor TAutomato.Destroy;
@@ -148,58 +231,41 @@ end;
 function TAutomato.Execute(const pCadeia: String): string;
 var
   lCharCadeia: Char;
-  lTop: PChar;
   lTransicoes: TListaParamTransicao;
-  lTrans: TParamTransicao;
-  lIndexTran: Integer;
+  lLogPilha: string;
 begin
    IniciarPilha;
    FEstadoAtual := FEstadosPossiveis.ItemByID('q0');
 
    for lCharCadeia in pCadeia do
    begin
-      if not MatchStr(lCharCadeia, INPUT_ALPHABET) then
+     lLogPilha := Self.EscrevePilha;
+     if lLogPilha <> EmptyStr then
+     begin
+        FMemoLogPilha.Lines.Add(lLogPilha);
+     end;
+
+     if MatchStr(UnicodeString(lCharCadeia), INPUT_ALPHABET) then
       begin
-        FEstadoAtual := FEstadosPossiveis.ItemByID('qi');
-        Break;
+         lTransicoes := GetTransicaoInput(lCharCadeia, FEstadoAtual);
+         try
+            if lTransicoes.Count > 0 then
+            begin
+               ProcessaTransicao(lTransicoes);
+            end
+            else
+            begin
+               FEstadoAtual := FEstadosPossiveis.ItemByID('qe');
+               break;
+            end;
+         finally
+            lTransicoes.Free;
+         end;
       end
       else
       begin
-
-         lTransicoes := GetTransicaoInput(lCharCadeia, FEstadoAtual);
-         try
-           if lTransicoes.Count <= 0 then
-           begin
-              FEstadoAtual := FEstadosPossiveis.ItemByID('qi');
-              break;
-           end
-           else
-           begin
-
-              lTop := FPilha.Pop;
-              if lTop = STACK_GROUND then
-              begin
-                FPilha.Push(PChar(STACK_GROUND));
-              end;
-
-              for lIndexTran:= 0 to pred (lTransicoes.Count) do
-              begin
-                 lTrans := lTransicoes.Items[lIndexTran];
-                 if (lTrans.SimboloPilhaCompara = lTop) or
-                    (lTrans.SimboloPilhaCompara = '') then
-                 begin
-                    lTop := FPilha.Pop();
-                    if lTrans.SimboloPilhaInsere <> '' then
-                    begin
-                       FPilha.Push(PChar(lTrans.SimboloPilhaInsere));
-                    end;
-                    FEstadoAtual := TEstado(lTrans.Destino);
-                 end;
-              end;
-           end;
-         finally
-           lTransicoes.Free;
-         end;
+         FEstadoAtual := FEstadosPossiveis.ItemByID('qe');
+         Break;
       end;
    end;
 
