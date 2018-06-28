@@ -19,7 +19,6 @@ type
      Label1: TLabel;
      memoArquivo: TMemo;
      memoLog: TMemo;
-     memoPilha: TMemo;
      openDlg: TOpenDialog;
      pnlFundo: TPanel;
      procedure btnIniciarClick(Sender: TObject);
@@ -73,7 +72,6 @@ var
 begin
    memoLog.Clear;
    lAutomato := TAutomato.Create;
-   lAutomato.MemoLogPilha := memoPilha;
    try
       if Assigned(FArquivo) then
       begin
@@ -123,7 +121,15 @@ end;
 
 procedure TfrmPrincipal.btnIniciarClick(Sender: TObject);
 begin
-   Iniciar;
+   if FileExists(edtCaminhoArquivo.Text) then
+   begin
+      Iniciar;
+   end
+   else
+   begin
+     ShowMessage('Selecione um arquivo valido!');
+     Exit;
+   end;
 end;
 
 end.

@@ -1,11 +1,11 @@
 object frmPrincipal: TfrmPrincipal
-  Left = 411
-  Height = 523
-  Top = 150
+  Left = 431
+  Height = 511
+  Top = 177
   Width = 1023
   BorderStyle = bsDialog
   Caption = 'Autômato de pilha'
-  ClientHeight = 523
+  ClientHeight = 511
   ClientWidth = 1023
   DesignTimePPI = 120
   OnClose = FormClose
@@ -13,13 +13,13 @@ object frmPrincipal: TfrmPrincipal
   LCLVersion = '1.8.4.0'
   object pnlFundo: TPanel
     Left = 0
-    Height = 523
+    Height = 511
     Top = 0
     Width = 1023
     Align = alClient
-    ClientHeight = 523
+    ClientHeight = 511
     ClientWidth = 1023
-    Color = clBlack
+    Color = clWhite
     ParentColor = False
     TabOrder = 0
     object Label1: TLabel
@@ -28,7 +28,7 @@ object frmPrincipal: TfrmPrincipal
       Top = 13
       Width = 109
       Caption = 'Arquivo de teste'
-      Font.Color = clWhite
+      Font.Color = clBlack
       ParentColor = False
       ParentFont = False
     end
@@ -55,7 +55,7 @@ object frmPrincipal: TfrmPrincipal
     end
     object memoArquivo: TMemo
       Left = 19
-      Height = 296
+      Height = 408
       Top = 72
       Width = 509
       ReadOnly = True
@@ -68,16 +68,9 @@ object frmPrincipal: TfrmPrincipal
       Top = 36
       Width = 72
       Caption = '. . .'
+      Color = clBlack
       OnClick = btnSelecionaArquivoClick
       TabOrder = 3
-    end
-    object memoPilha: TMemo
-      Left = 16
-      Height = 113
-      Top = 376
-      Width = 512
-      ReadOnly = True
-      TabOrder = 4
     end
     object btnIniciar: TButton
       Left = 560
@@ -86,12 +79,12 @@ object frmPrincipal: TfrmPrincipal
       Width = 432
       Caption = 'Iniciar'
       OnClick = btnIniciarClick
-      TabOrder = 5
+      TabOrder = 4
     end
   end
   object openDlg: TOpenDialog
     Filter = '*.txt'
-    left = 522
-    top = 114
+    left = 392
+    top = 136
   end
 end

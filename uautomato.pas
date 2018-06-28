@@ -239,10 +239,13 @@ begin
 
    for lCharCadeia in pCadeia do
    begin
-     lLogPilha := Self.EscrevePilha;
-     if lLogPilha <> EmptyStr then
+     if Assigned(FMemoLogPilha) then
      begin
-        FMemoLogPilha.Lines.Add(lLogPilha);
+        lLogPilha := Self.EscrevePilha;
+        if lLogPilha <> EmptyStr then
+        begin
+           FMemoLogPilha.Lines.Add(lLogPilha);
+        end;
      end;
 
      if MatchStr(UnicodeString(lCharCadeia), INPUT_ALPHABET) then

@@ -8,8 +8,6 @@ uses
    Classes, SysUtils, uEstado;
 
 type
-  //TPilhaString = specialize TStack<String>;
-
   TResultadoTransicao = record
     NovoEstado: TEstado;
     NovoSimboloPilha: string;
