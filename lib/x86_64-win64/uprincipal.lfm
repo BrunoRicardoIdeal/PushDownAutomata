@@ -1,7 +1,7 @@
 object frmPrincipal: TfrmPrincipal
-  Left = 431
+  Left = 623
   Height = 511
-  Top = 177
+  Top = 360
   Width = 1023
   BorderStyle = bsDialog
   Caption = 'Autômato de pilha'
